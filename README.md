@@ -4,6 +4,6 @@
 ![image](figs/title.jpg)  
   
   
-Hi, I'm Xin Luo
-Here is the repo for my ADS project1
+Hi, I'm Xin Luo   
+Here is the repo for my ADS project1   
 You can find my RNotebook and report pdf/html files in the /doc folder
