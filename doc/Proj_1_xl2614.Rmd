@@ -1,9 +1,9 @@
 ---
 title: "Data Story on Presidents' speeches"
 output:
-  pdf_document: default
-  html_notebook: default
   html_document: default
+  html_notebook: default
+  pdf_document: default
 ---
 
 ---
@@ -13,7 +13,7 @@ date: "2017/9/7"
 output: html_document
 ---
 
-This report is consist of 4 parts and the last part could be read as a appendix 
+This report is consist of 4 parts and the last part could be read as a appendix
 
 
 1. Inaugaration Speeches and Nomination Speeches  
@@ -124,7 +124,6 @@ I select 8 well-known presidents here as examples of this part to explore the si
 ```{r,warning=F,message=F}
 sel<-c( "BarackObama", "DonaldJTrump", "FranklinDRoosevelt", "GeorgeWBush", "JohnFKennedy",   "RichardNixon", "RonaldReagan", "WilliamJClinton" ) 
 ```
-
 #####a. sentences analysis
 First, consider the length of speeches. Here the speeches all comes from the term 1 of the presidents
 ```{r,warning=F,message=F}
@@ -168,6 +167,7 @@ beeswarm(word.count~x,
          main="Nomination Speeches and Inaugural Speeches")
 legend("topright",legend = c("inaug","nomin"),fill=color)
 ```
+
 
 In the bee swarm plot, the part of short sentences of nominations are much thicker than inaugration speeches while the number of long sentences of them are relatively close, indicating presidents use more short sentences in their nomination speeches
 
@@ -302,6 +302,8 @@ for(i in c(1:6)){
 
 ```
 
+  
+
 The sentiments presidents show in nomination speeches are more diverse and complicate than their inauguration speeches, which is consistent with the features of nomination and inaugration speeches. Most of the time, nomination speech gives the speaker more freedom and longer time while the inaugration is much more normal and rigid. 
 
 The general speard of sentiments are similar in all these speeches. As we can see, though postive sentiment is presidents' favorite, they would not absolutely ignore or hide the other bad feelings. On the contrary, they utilize bad feelings to incite people. 
@@ -334,6 +336,7 @@ text(x=p4,y=inaug_sent/sum(inaug_sent)+0.005,
 title(sub = "Inaug",line=0,col=brewer.pal(9,"Greys"),cex=2)
 title(sel[i],outer = T,line=-3)
 ```
+
 
 Compare to the other presidents, distribution of sentiments of Trump's inaugration speech is obviously different from his nomination speech and looks distinctive among all these speeches.   
 His inaugration emphasizes the opstimistic sentiments like "anticipation", "joy" and "trust" while reduce the percentages of "anger", "disgust", "sadness" and "negative" to a very low level. Personally speaking, it has strong desire to encourage people by avoiding the negative feelings. 
@@ -591,6 +594,8 @@ k <- 10
 #                                                  seed = seed, best=best,
 #                                                  burnin = burnin, iter = iter, 
 #                                                  thin=thin))
+
+#load the lda model I trained, in case of rerunning the lda(time consuming) every time i knit the file
 load("../output/total_R.RData")
 tidy_lda<-tidy(ldaOut10_1)
 ```
@@ -684,7 +689,8 @@ fviz_cluster(km.res,
 It is interesting to note that the recent presidents like Obama, Trump, two Bush, Clinton are clustered into one group, which is reasonable because they might have similar focuses and problems. But other groups do not have such a distinctive feature, their characteristics need a further research to explore.
 
 
-* But if we check the gamma values of the topic model, we will find the model doesn't perform well.
+It has to be noted that if we check the gamma values of the topic model, we will find the model doesn't perform well. And this is the reason why i make this part the last one and recommend you read it as a appendix.
+
 ```{r,warning=F,message=F}
 lda_gamma <- tidy(ldaOut10, matrix = "gamma")
 #lda_gamma1[,4:6]<-sapply(lda_gamma$document,split_filename)
@@ -699,12 +705,12 @@ ggplot(lda_gamma, aes(gamma)) +
   labs(title = "Distribution of probabilities for all topics",
        y = "Number of documents", x = expression(gamma))
 
-# ggplot(lda_gamma, aes(gamma, fill = as.factor(topic))) +
-#   geom_histogram(show.legend = FALSE) +
-#   facet_wrap(~ topic, ncol = 4) +
-#   scale_y_log10() +
-#   labs(title = "Distribution of probability for each topic",
-#        y = "Number of documents", x = expression(gamma))
+ggplot(lda_gamma, aes(gamma, fill = as.factor(topic))) +
+  geom_histogram(show.legend = FALSE) +
+  facet_wrap(~ topic, ncol = 4) +
+  scale_y_log10() +
+  labs(title = "Distribution of probability for each topic",
+       y = "Number of documents", x = expression(gamma))
 ```
 
 
