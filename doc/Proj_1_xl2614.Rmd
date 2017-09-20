@@ -1,5 +1,5 @@
 ---
-title: "R Notebook"
+title: "Data Story on Presidents' speeches"
 output:
   pdf_document: default
   html_notebook: default
@@ -699,12 +699,12 @@ ggplot(lda_gamma, aes(gamma)) +
   labs(title = "Distribution of probabilities for all topics",
        y = "Number of documents", x = expression(gamma))
 
-ggplot(lda_gamma, aes(gamma, fill = as.factor(topic))) +
-  geom_histogram(show.legend = FALSE) +
-  facet_wrap(~ topic, ncol = 4) +
-  scale_y_log10() +
-  labs(title = "Distribution of probability for each topic",
-       y = "Number of documents", x = expression(gamma))
+# ggplot(lda_gamma, aes(gamma, fill = as.factor(topic))) +
+#   geom_histogram(show.legend = FALSE) +
+#   facet_wrap(~ topic, ncol = 4) +
+#   scale_y_log10() +
+#   labs(title = "Distribution of probability for each topic",
+#        y = "Number of documents", x = expression(gamma))
 ```
 
 

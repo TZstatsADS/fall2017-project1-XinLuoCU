@@ -1,5 +1,5 @@
 # Project: 
 ### Output folder
 
-The output directory contains analysis output, processed datasets, logs, or other processed things.
+I left a Rworkspace in this file, which contains the LDA model I got, in case I spend too much time kniting the rmd file, because running the lda is quite timeconsuming
 
