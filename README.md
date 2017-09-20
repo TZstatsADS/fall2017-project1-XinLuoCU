@@ -1,7 +1,8 @@
 # Fall 2017
 # Project 1: What did the presidents say at their inauguation?
 
-![image](figs/title.jpg)
+![image](figs/title.jpg)  
+  
   
 Hi, I'm Xin Luo
 Here is the repo for my ADS project1
