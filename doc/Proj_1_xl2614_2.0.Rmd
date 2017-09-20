@@ -1,9 +1,9 @@
 ---
 title: "From one speech to the next one, have the presidents changed a lot?"
 output:
-  html_document: default
-  html_notebook: default
   pdf_document: default
+  html_notebook: default
+  html_document: default
 ---
 
 ---
