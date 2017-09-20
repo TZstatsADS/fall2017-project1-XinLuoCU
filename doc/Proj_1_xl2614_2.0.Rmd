@@ -1,9 +1,9 @@
 ---
 title: "From one speech to the next one, have the presidents changed a lot?"
 output:
-  pdf_document: default
-  html_notebook: default
   html_document: default
+  html_notebook: default
+  pdf_document: default
 ---
 
 ---
@@ -13,7 +13,7 @@ date: "2017/9/7"
 output: html_document
 ---
 
-This report is consist of 4 parts and the last 2 parts could be read as a appendix
+This report is consist of 4 parts and the last 2 parts are not part of the "story", just read them as complements
 
 
 1. Inaugaration Speeches and Nomination Speeches  
@@ -460,7 +460,7 @@ So, the presidents seem changed from speeches to speeches, actually, they did no
 
   
 
-####The following two parts are not part of my "story", just read it as the appendix
+####The following two parts are not part of my "story", read them as compelemnts
 
 
 ###PART III: Some Interesting Details
