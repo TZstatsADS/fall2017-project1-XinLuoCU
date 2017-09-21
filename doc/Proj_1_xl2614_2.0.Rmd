@@ -17,21 +17,21 @@ This report is consist of 4 parts and the last 2 parts are not part of the "stor
 
 
 1. Inaugaration Speeches and Nomination Speeches  
-This part explores the simialrities and differences between inaugration speeches and nomination speeches thoroughly to get an insight for presidents' changes. Except for some general features, here we also discuss 2 example in details, which are both provided by Trump.
+This part explores the simialrities and differences between inauguration speeches and nomination speeches thoroughly to get an insight for presidents' changes. Except for some general features, here we also discuss 2 example in details, which are both provided by Trump.
 
 
-2. Similarities between 2 Consecutive Term Inaugrations Speeches
-By studying 2 succussive terms' inaugration speeches, we could conclude the issues really matter to president of these 2 terms, having an insight about these 8 years. For those 2-term presidents, we could be informed about their main contributions and focus, because they love to mention their contributions in the second term inaugration speeches.
+2. Similarities between 2 Consecutive Term inaugurations Speeches
+By studying 2 succussive terms' inauguration speeches, we could conclude the issues really matter to president of these 2 terms, having an insight about these 8 years. For those 2-term presidents, we could be informed about their main contributions and focus, because they love to mention their contributions in the second term inauguration speeches.
 
 
 3. Some Interesting Details  
 Analysis on the general or personal speaking habits of the presidents
 
 4. Topics speeches cover  
-This part is to have a look about the topics presidents are attached to, but have nothing suprised. It's easy to guess the themes presidents would like to show their interests in the inaugration speeches.
+This part is to have a look about the topics presidents are attached to, but have nothing suprised. It's easy to guess the themes presidents would like to show their interests in the inauguration speeches.
 
 
-( This report uses nomination, inaugration and farewell speeches of presidents and candidates )
+( This report uses nomination, inauguration and farewell speeches of presidents and candidates )
 
 
 
@@ -120,7 +120,7 @@ sentence_list$Win<-tolower(sentence_list$Win)
 
 ###PART I:  Inaugaration Speeches and Nomination Speeches
 
-I select 8 well-known presidents here as examples of this part to explore the similarities and differences between nomination speeches and inaugration speeches. 
+I select 8 well-known presidents here as examples of this part to explore the similarities and differences between nomination speeches and inauguration speeches. 
 ```{r,warning=F,message=F}
 sel<-c( "BarackObama", "DonaldJTrump", "FranklinDRoosevelt", "GeorgeWBush", "JohnFKennedy",   "RichardNixon", "RonaldReagan", "WilliamJClinton" ) 
 ```
@@ -151,7 +151,7 @@ ggplot(Speech_length,aes(x=File,y=words,fill=factor(type)))+
 
 ```
 
-Comapre to nomination speeches, most inaugration speeches have much less words. If we take the length of sentences into consideration, is this phenomenon because of the short sentences or long sentences?
+Comapre to nomination speeches, most inauguration speeches have much less words. If we take the length of sentences into consideration, is this phenomenon because of the short sentences or long sentences?
 
 Let's make a bee swarm plot for the length of sentences
 ```{r,warning=F,message=F}
@@ -164,18 +164,18 @@ beeswarm(word.count~x,
          cex=0.55, cex.axis=0.8, cex.lab=0.8,
          spacing=5/nlevels(nomin_inaug_list$FileOrdered),
          las=2, ylab="", xlab="Number of words in a sentence.",
-         main="Nomination Speeches and Inaugural Speeches")
+         main="Nomination Speeches and Inauguration Speeches")
 legend("topright",legend = c("inaug","nomin"),fill=color)
 ```
 
 
-In the bee swarm plot, the part of short sentences of nominations are much thicker than inaugration speeches while the number of long sentences of them are relatively close, indicating presidents use more short sentences in their nomination speeches.
+In the bee swarm plot, the part of short sentences of nominations are much thicker than inauguration speeches while the number of long sentences of them are relatively close, indicating presidents use more short sentences in their nomination speeches.
 
-Therefore, I think presidents did change the way they talk from the nomination to inaugration. Using more short sentcences might represent they feel more freely in their nomination speeches, because the inaugration is a more formal occasion, they will pay more attention to the their sentences and speech structure.
+Therefore, I think presidents did change the way they talk from the nomination to inauguration. Using more short sentcences might represent they feel more freely in their nomination speeches, because the inauguration is a more formal occasion, they will pay more attention to the their sentences and speech structure.
 
 
 #####b. Keywords
-To find out the keywords of each file, here we use all nomination, inaugration and farewell speeches as base, calcuates the Tf-idf of words to decide if their are playing key roles in their own documents. Then make wordcloud plots for nomination and inaugration speeches respectively with Tf-idf as weights.
+To find out the keywords of each file, here we use all nomination, inauguration and farewell speeches as base, calcuates the Tf-idf of words to decide if their are playing key roles in their own documents. Then make wordcloud plots for nomination and inauguration speeches respectively with Tf-idf as weights.
 ```{r,warning=F,message=F}
 #compare their wordcloud
 text_all<-VCorpus(DirSource("../data/fulltext/"))
@@ -247,11 +247,11 @@ plot_word_cloud(1,1)#Obama financial crisis
 plot_word_cloud(4,2)#Bush iraq war
 ```
 
-The keywords selected for each speech is very accurate. For example, The keyword of Obama's nomination speech is his competitor in the election, "Mccain", but only  the "icy", "stroms" showed in his inaugration speech, reflecting the financial crisis just happened. In Bush's inaugration wordcloud, there are big "Iraq" and "Afghanistan", indicating the Iraq war began in 2003, but they all disappeared in the word cloud of inaugration speech. So, has the contents of presidents' speeches changed a lot from nomination to inaugration
+The keywords selected for each speech is very accurate. For example, The keyword of Obama's nomination speech is his competitor in the election, "Mccain", but only  the "icy", "stroms" showed in his inauguration speech, reflecting the financial crisis just happened. In Bush's inauguration wordcloud, there are big "Iraq" and "Afghanistan", indicating the Iraq war began in 2003, but they all disappeared in the word cloud of inauguration speech. So, has the contents of presidents' speeches changed a lot from nomination to inauguration
 
-Generally speaking, we can see the nomination speeches always have more words and these words are very specific, like the country names and people names, while Inaugration speeches intend to contain the "bigger" words. For example, Bush's "iraq" and "terrorist" are replaced by "tyranny" and "defended".
+Generally speaking, we can see the nomination speeches always have more words and these words are very specific, like the country names and people names, while inauguration speeches intend to contain the "bigger" words. For example, Bush's "iraq" and "terrorist" are replaced by "tyranny" and "defended".
 
-Besides, in nomination speeches, speakers would like to provide people detailed plans and promises in order to receive supports, while the inaugration speech do not have that strong purpose. While making inaugration speeches, speakers are more likely to summarize the situation of the country and the his main claims, they would not give that much details to people under the limitation of time.
+Besides, in nomination speeches, speakers would like to provide people detailed plans and promises in order to receive supports, while the inauguration speech do not have that strong purpose. While making inauguration speeches, speakers are more likely to summarize the situation of the country and the his main claims, they would not give that much details to people under the limitation of time.
 
 Use Trump's two speeches as an detailed example. 
 ```{r,warning=F}
@@ -260,7 +260,7 @@ plot_word_cloud(2,1)#Trump
 
 In his nomination speech, he mentioned many people like Obama and Hillary, "Hillary" is even the key word of this speech, reflecting that the intense competition between them. Besides, his families, Melania and Ivanka also shown in order to build his personal image. Except for these people, there are many countries and organizations names and most of them are obviously asscociated with "immigration", "terrorism","border" words. As we all know, the key ideas of Trump during his presidential campaign are dealing with these issues with some strong approaches.
 
-In contrast, names and sharp opinions dissapear in his inaugration speech and most of them are replaced by some "big" words like "dreams", "protect" and "transferring". Though we could still conclude the main ideas of Trump from the inaugration speech, compare to nomination speech his distinctive characteristics become vague.
+In contrast, names and sharp opinions dissapear in his inauguration speech and most of them are replaced by some "big" words like "dreams", "protect" and "transferring". Though we could still conclude the main ideas of Trump from the inauguration speech, compare to nomination speech his distinctive characteristics become vague.
 
 So, I think the presidents have not change their ideas, but the purposes and occasions changed, so they change the ways they convey their concepts.
 
@@ -306,11 +306,11 @@ for(i in c(1:6)){
 
 ```
 
-The sentiments presidents show in nomination speeches are more diverse and complicate than their inauguration speeches, which is consistent with the features of nomination and inaugration speeches. Most of the time, nomination speech gives the speaker more freedom and longer time while the inaugration is much more normal and rigid. 
+The sentiments presidents show in nomination speeches are more diverse and complicate than their inauguration speeches, which is consistent with the features of nomination and inauguration speeches. Most of the time, nomination speech gives the speaker more freedom and longer time while the inauguration is much more normal and rigid. 
 
 The general speard of sentiments are similar in all these speeches. As we can see, though postive sentiment is presidents' favorite, they would not absolutely ignore or hide the other bad feelings. On the contrary, they utilize bad feelings to incite people. 
 
-Besides, most presidents' nomination and inaugration speeches have almost the same distribution of sentiments, indicating that presidents has fixed personal style in speeches, which should be consistent with the personal image he built. But Trump is an exceptation.
+Besides, most presidents' nomination and inauguration speeches have almost the same distribution of sentiments, indicating that presidents has fixed personal style in speeches, which should be consistent with the personal image he built. But Trump is an exceptation.
 
 ```{r,echo = TRUE}
 par(mfrow=c(1,2),par(pty="s"))
@@ -340,14 +340,14 @@ title(sel[i],outer = T,line=-3)
 ```
 
 
-Compare to the other presidents, distribution of sentiments of Trump's inaugration speech is obviously different from his nomination speech and looks distinctive among all these speeches.   
-His inaugration emphasizes the opstimistic sentiments like "anticipation", "joy" and "trust" while reduce the percentages of "anger", "disgust", "sadness" and "negative" to a very low level. Personally speaking, compare to Trump's nomination speech, in the inaugration speech, Trump has much stronger strong desire to encourage people by avoiding the negative feelings. 
+Compare to the other presidents, distribution of sentiments of Trump's inauguration speech is obviously different from his nomination speech and looks distinctive among all these speeches.   
+His inauguration emphasizes the opstimistic sentiments like "anticipation", "joy" and "trust" while reduce the percentages of "anger", "disgust", "sadness" and "negative" to a very low level. Personally speaking, compare to Trump's nomination speech, in the inauguration speech, Trump has much stronger strong desire to encourage people by avoiding the negative feelings. 
 
 In conclusion, the sentiments of most presidents do not change their sentiments very much except for Trump. But as we all know, Trump is a distinctive person and a alien among the American presidents, it is not surprised to see he has such perfermance.
 
-###PART II:  Similarities between 2 consecutive terms Inaugrations Speeches
+###PART II:  Similarities between 2 consecutive terms inaugurations Speeches
 
-By exploring the similar words of two successive inaugration speeches , we can have a insight about the issues which the presidents care about. They might be problems have not yet been resolved or aspects this president focus on. Here I use the latest George W Bush and Obama's speeches as an example.
+By exploring the similar words of two successive inauguration speeches , we can have a insight about the issues which the presidents care about. They might be problems have not yet been resolved or aspects this president focus on. Here I use the latest George W Bush and Obama's speeches as an example.
 ```{r,warning=F,message=F}
 Obama1<-tdm.tidy%>%
   filter(document==paste("inaug","BarackObama","-",1,".txt",sep="")|document==paste("nomin","BarackObama","-",1,".txt",sep=""))%>%
@@ -442,13 +442,13 @@ grid.arrange(
 
 In 2 consecutive terms of George W Bush, expect for those common words like "america", "will", "nation" and "people", we can notice that there are also "freedom" ,"help" ,"health" and "children". These words remind us the "No child left behind Act" and "Health Savings Account" proposed and signed by Bush. 
 
-The shared key words of two inaugration speeches of Obama contain "jobs", "pay", "afford" and "crisis", indicating the 2007-2008 financial crisis that Obama encountered and he still consider it is  his main contribution and will pay more attention to it in the following term.
+The shared key words of two inauguration speeches of Obama contain "jobs", "pay", "afford" and "crisis", indicating the 2007-2008 financial crisis that Obama encountered and he still consider it is  his main contribution and will pay more attention to it in the following term.
 
-Therefore, I think the similarities do exist. Both two presidents maintain the things they care in the two consecutive inaugration speeches.
+Therefore, I think the similarities do exist. Both two presidents maintain the things they care in the two consecutive inauguration speeches.
 
 
 ###Conclusion
-1. In general, compare to inaugration speech, nomination speeches have more words, which means it contains more information that presidents want to convey to the listeners. The word clouds of nomnation speeches conclude much more keywords for the presidents' claims. But the real ideas of presidents do not change. They just change their purposes from beating others or winning supports or building personal image to summarizing the conditions and encouraging people.
+1. In general, compare to inauguration speech, nomination speeches have more words, which means it contains more information that presidents want to convey to the listeners. The word clouds of nomnation speeches conclude much more keywords for the presidents' claims. But the real ideas of presidents do not change. They just change their purposes from beating others or winning supports or building personal image to summarizing the conditions and encouraging people.
 
 2. After 4 years, presidents would not change much as we thought. They still cares about the aspects they have interests at the beginning or the field they made differences in. 
 
@@ -537,9 +537,9 @@ ggplot(tidy.subject_word%>%
   xlab("President")+ylab("Number of Words")
 ```
 
-About the first-person pronouns, most of the time presidents use "we" instead of "I" and even though second and third-person pronouns have much lower frequency than "we", some of them are higher than the frequency of "I". It is obvious that presidents lower the importance of themselves in inaugration speeches. Instead, they empahsize they are part of citizens. I'm impressed that even a conficent person like Trump decreases the frequency of "I" to such a lower level.
+About the first-person pronouns, most of the time presidents use "we" instead of "I" and even though second and third-person pronouns have much lower frequency than "we", some of them are higher than the frequency of "I". It is obvious that presidents lower the importance of themselves in inauguration speeches. Instead, they empahsize they are part of citizens. I'm impressed that even a conficent person like Trump decreases the frequency of "I" to such a lower level.
 
-It's also noticeable that none of the president I selected mention "she" in their inaugration speeches.
+It's also noticeable that none of the president I selected mention "she" in their inauguration speeches.
 
 
 ###Part IV: Topic Modeling
@@ -628,7 +628,7 @@ top_terms %>%
   facet_wrap(~ topic, ncol = 4, scales = "free")
 ```
 
-It is noticeable that the values of top terms are not high enough, few of them has exceeded 0.6. Therefore, maybe these terms cannot represent the topics well as we thought. But I conclude them manually, they are "Faith", "World Peace", "Freedom","People", "Business" ,"Responsibility", "Govern", "New America", "Employment", "Politics". Generally speaking, these topics cover almost every aspect a inaugration would mention.
+It is noticeable that the values of top terms are not high enough, few of them has exceeded 0.6. Therefore, maybe these terms cannot represent the topics well as we thought. But I conclude them manually, they are "Faith", "World Peace", "Freedom","People", "Business" ,"Responsibility", "Govern", "New America", "Employment", "Politics". Generally speaking, these topics cover almost every aspect a inauguration would mention.
 
 #####(2).How does the topics distribute?
 ```{r}
@@ -656,7 +656,7 @@ As the plot shown, the topics are evenly distributed. Therefore, presidents do n
 
 
 #####(3). Clustering
-According to the mean beta values for the snipets of each topic, we give each inaugration speech 10 topic values representing its probability for belonging to each topic.
+According to the mean beta values for the snipets of each topic, we give each inauguration speech 10 topic values representing its probability for belonging to each topic.
 ```{r,message=F,warning=F}
 par(mar=c(1,1,1,1))
 topic.summary=as_tibble(corpus.list.df)%>%
@@ -678,7 +678,7 @@ topic.summary=as.data.frame(topic.summary)
 rownames(topic.summary)=as.character((topic.summary[,1]))
 ```
 
-Use k-means algorithm to cluster the presidents according to their inaugration speeches
+Use k-means algorithm to cluster the presidents according to their inauguration speeches
 ```{r,message=F,warning=F}
 km.res=kmeans(scale(topic.summary[,-1]), iter.max=200,
               5)
