@@ -21,7 +21,7 @@ This part explores the simialrities and differences between inaugration speeches
 
 
 2. Similarities between 2 Consecutive Term Inaugrations Speeches
-By studying 2 succussive terms' inaugration speeches, we could conclude the issues really matter to presidents of these 2 terms, having a insight about these 8 years. For those 2-term presidents, we could be informed about their main contributions and focus, because they love to mention their contributions in the second term inaugration speeches.
+By studying 2 succussive terms' inaugration speeches, we could conclude the issues really matter to president of these 2 terms, having an insight about these 8 years. For those 2-term presidents, we could be informed about their main contributions and focus, because they love to mention their contributions in the second term inaugration speeches.
 
 
 3. Some Interesting Details  
@@ -171,7 +171,7 @@ legend("topright",legend = c("inaug","nomin"),fill=color)
 
 In the bee swarm plot, the part of short sentences of nominations are much thicker than inaugration speeches while the number of long sentences of them are relatively close, indicating presidents use more short sentences in their nomination speeches.
 
-Therefore, I think presidents did change the way they talk from the nomination to inaugration. Using more short sentcences might represent they feel more freely in their nomination speeches, because the inaugration is a more formal occasion, they will pay more attention to the sentences and speech structure.
+Therefore, I think presidents did change the way they talk from the nomination to inaugration. Using more short sentcences might represent they feel more freely in their nomination speeches, because the inaugration is a more formal occasion, they will pay more attention to the their sentences and speech structure.
 
 
 #####b. Keywords
@@ -452,7 +452,7 @@ Therefore, I think the similarities do exist. Both two presidents maintain the t
 
 2. After 4 years, presidents would not change much as we thought. They still cares about the aspects they have interests at the beginning or the field they made differences in. 
 
-So, the presidents seem changed from speeches to speeches, actually, they did not make huge transformations. They just change the way they talk according to their purposes and always insist their ideas.
+So, the presidents seem changed from speeches to speeches, actually, they did not make huge transformations. They just change the way they talk according to their purposes and always insist their ideas and speech style.
 
 
 
